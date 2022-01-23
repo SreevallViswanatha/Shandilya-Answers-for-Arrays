@@ -1,0 +1,36 @@
+// Write a program in C to find the second smallest element in an array.
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n, n2, array[10000], minimum, place, e, i, a;
+    printf("Enter 0 to stop.\n");
+    for(n=0;;n++)
+    {
+        printf("Enter element %d:", n+1);
+        scanf("%d", &array[n]);
+        if(array[n]==0)
+            break;
+    }
+    n2=n;
+    for(a=0; a<=1; a++)
+    {
+        minimum=array[0];
+        e=0;
+        for(n=0; n<=n2; n++)
+        {
+            if(minimum>array[n])
+            {
+                place=n;
+                minimum=array[n];
+                e=1;
+            }
+        }
+        if(e==0)
+            place=0;
+        for(i=place; i<=n2; i++)
+            array[i]=array[i+1];
+        n2--;
+    }
+    printf("The second smallest element is:%d", minimum);
+}
