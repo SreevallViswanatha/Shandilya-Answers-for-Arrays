@@ -1,0 +1,31 @@
+// Write a program in C to find the majority element of an array.
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n, n2, array[10000], index, count;
+    printf("Enter 0 to stop.\n");
+    for(n=0;;n++)
+    {
+        printf("Enter element %d:", n+1);
+        scanf("%d", &array[n]);
+        if(array[n]==0)
+            break;
+    }
+    n2=n;
+    for(index=0; index<=n; index++)
+    {
+        count=0;
+        for(n=1; n<=n2; n++)
+        {
+            if(array[index]==array[n])
+                count++;
+        }
+        if(count>=(n2+1)/2)
+        {
+            printf("The majority element is:%d", array[index]);
+            exit(0);
+        }
+    }
+    printf("None of the elements are in the majority.");
+}
