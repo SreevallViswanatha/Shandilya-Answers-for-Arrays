@@ -1,0 +1,40 @@
+// Write a program in C to merge one sorted array into another sorted array.
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int array1[1000000], array2[100000000], array3[100000000], n1, n2, n3, n1c, n2c;
+    printf("Enter 0 to stop.\n");
+    for(n1=0;;n1++)
+    {
+        printf("Enter element %d for the first array:", n+1);
+        scanf("%d", &array1[n1]);
+        if(array1[n1]==0)
+            break;
+    }
+    for(n2=0;;n2++)
+    {
+        printf("Enter element %d for the second array:", n+1);
+        scanf("%d", &array2[n2]);
+        if(array2[n2]==0)
+            break;
+    }
+    if(n1<=n2)
+    {
+        n1c=n1;
+        n1=0;
+        for(n3=0; n3<=n1c; n3++)
+        {
+            array3[n3]=array[n1];
+            n1++;
+        }
+        n2c=n2;
+        n2=0;
+        n1c++;
+        for(; n2<=n2c; n2++)
+        {
+            array[n1c]=array[n2];
+            n1c++;
+        }
+    }
+}
