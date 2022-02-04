@@ -1,0 +1,27 @@
+// Write a program in C to find if a given integer x appears more than n/2 times in a sorted array of n integers.
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n, n2, array[100000], x, count=0;
+    printf("Enter 0 to stop.\n");
+    for(n=0;;n++)
+    {
+        printf("Enter element number %d:", n+1);
+        scanf("%d", &array[n]);
+        if(array[n]==0)
+            break;
+    }
+    printf("Enter an integer:");
+    scanf("%d", &x);
+    n2=n;
+    for(n=0; n<=n2; n++)
+    {
+        if(x==array[n])
+            count++;
+    }
+    if(count>=n2/2)
+        printf("%d appears more than half the number of elements.", x);
+    else
+        printf("%d does not appear more than half the number of elements.", x);
+}
