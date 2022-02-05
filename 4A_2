@@ -1,0 +1,28 @@
+// Write a program in C to count the number of triangles can be fromed from a given array.
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int n, n2, array[10000], n3, n4, count=0;
+    printf("Enter 0 to stop.\n");
+    for(n=0;;n++)
+    {
+        printf("Enter element number %d:", n+1);
+        scanf("%d", &array[n]);
+        if(array[n]==0)
+            break;
+    }
+    n2=n;
+    for(n=0; n<=n2; n++)
+    {
+        for(n3=n+1; n3<=n2; n3++)
+        {
+            for(n4=n3+1; n4<=n2; n4++)
+            {
+                if(((array[n]+array[n3])>array[n4])&&((array[n]+array[n4])>array[n3])&&((array[n3]+array[n4])>array[n]))
+                    count++;
+            }
+        }
+    }
+    printf("The maximum number of triangles that can be formed out of the array is:%d", count);
+}
